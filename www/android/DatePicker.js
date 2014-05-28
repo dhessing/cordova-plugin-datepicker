@@ -22,6 +22,14 @@ DatePicker.prototype.show = function(options, cb) {
 					   (options.date.getHours()) + "/" + 
 					   (options.date.getMinutes());
 	}
+	
+	if (options.minDate) {
+        	options.minDate = Date.parse(options.minDate);
+    	}
+    	
+    	if (options.maxDate) {
+        	options.maxDate = Date.parse(options.maxDate);
+	}
 
 	var defaults = {
 		mode : 'date',
